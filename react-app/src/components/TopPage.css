@@ -112,12 +112,19 @@ section.yourstory .wrapper button {
     fill: #fff;
   }
 
-.hero-column {
+.left.hero-column {
     border-right: 1px solid var(--color-gray);
-    border-left: 1px solid var(--color-gray);
-    width: 17vw;
+    width: calc(17vw + 2px);
     height: 100%;
     background: var(--color-white);
+    padding: var(--space-xs);
+}
+.right.hero-column {
+    border-left: 1px solid var(--color-gray);
+    width: calc(17vw - 2px);
+    height: 100%;
+    background: var(--color-white);
+    padding: var(--space-xs);
 }
 .hero-column .title{
     padding: var(--space-base);

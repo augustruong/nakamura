@@ -12,8 +12,9 @@
 }
 
 #top-page section.hero .mid {
-    width: 66vw;
+    /* width: calc(66vw); */
     padding: var(--space-xs);
+    width: calc(66vw + 7px);
 }
 #top-page section.hero .mid .title {
     font-size: 63px;
@@ -28,7 +29,7 @@
     position: relative;
 }
 #top-page section.hero .mid .kv-wrapper .kvImg {
-    width: calc(66vw - var(--space-xs)*2);
+    /* width: calc(66vw - var(--space-xs)*2); */
     height: calc(100vh - 205px);
     background-image: url('/public/img/kvImg.png');
     background-position: center;
