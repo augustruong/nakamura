@@ -1,5 +1,6 @@
 import React from 'react';
 import {Routes, Route, useLocation} from 'react-router-dom';
+import { AnimatePresence } from "framer-motion";
 import './App.css';
 
 import Layout from './components/Layout';
@@ -36,35 +37,37 @@ function App() {
   const { pathname } = useLocation();
 
   return (
-    <Routes>
-      <Route path={words.routes.user.top} element={Layout(TopPage)} />
-      <Route path={words.routes.user.feature} element={Layout(FeaturePage)} />
-      <Route path={words.routes.user.profile} element={Layout(ProfilePage)} />
-      <Route path={words.routes.user.service} element={Layout(ServicePage)} />
-      <Route path={words.routes.user.blog} element={Layout(BlogPage)} />
-      <Route path={words.routes.user.review} element={Layout(ReviewPage)} />
-      <Route path={words.routes.user.contact} element={Layout(ContactPage)} />
-      <Route path={words.routes.user.faq} element={Layout(FAQPage)} />
-      <Route path={words.routes.user.terms} element={Layout(TermOfUsePage)} />  
-      <Route path={words.routes.user.policy} element={Layout(PolicyPage)} />  
-      <Route path={words.routes.user.purpose} element={Layout(PurposePage)} />  
-      <Route path={words.routes.user.blogcontent} element={Layout(BlogContentPage)} />  
+    <AnimatePresence>
+      <Routes>
+        <Route path={words.routes.user.top} element={Layout(TopPage)} />
+        <Route path={words.routes.user.feature} element={Layout(FeaturePage)} />
+        <Route path={words.routes.user.profile} element={Layout(ProfilePage)} />
+        <Route path={words.routes.user.service} element={Layout(ServicePage)} />
+        <Route path={words.routes.user.blog} element={Layout(BlogPage)} />
+        <Route path={words.routes.user.review} element={Layout(ReviewPage)} />
+        <Route path={words.routes.user.contact} element={Layout(ContactPage)} />
+        <Route path={words.routes.user.faq} element={Layout(FAQPage)} />
+        <Route path={words.routes.user.terms} element={Layout(TermOfUsePage)} />  
+        <Route path={words.routes.user.policy} element={Layout(PolicyPage)} />  
+        <Route path={words.routes.user.purpose} element={Layout(PurposePage)} />  
+        <Route path={words.routes.user.blogcontent} element={Layout(BlogContentPage)} />  
 
-      <Route path={words.routes.admin.login} element={<AdminLogin />} />
-      <Route path={words.routes.admin.home} element={<AdminHome />} />
-  
-      <Route path={words.routes.admin.blogmanage} element={<BlogManagePage />} />
-      <Route path={words.routes.admin.reviewmanage} element={<ReviewManagePage />} />
-      <Route path={words.routes.admin.createpost} element={<CreatePost />} />
-      <Route path={words.routes.admin.createreview} element={<CreateReview />} />
+        <Route path={words.routes.admin.login} element={<AdminLogin />} />
+        <Route path={words.routes.admin.home} element={<AdminHome />} />
+    
+        <Route path={words.routes.admin.blogmanage} element={<BlogManagePage />} />
+        <Route path={words.routes.admin.reviewmanage} element={<ReviewManagePage />} />
+        <Route path={words.routes.admin.createpost} element={<CreatePost />} />
+        <Route path={words.routes.admin.createreview} element={<CreateReview />} />
 
-      <Route path={words.routes.admin.editpost} element={<EditPost />} />
-      <Route path={words.routes.admin.editreview} element={<EditReview />} />
+        <Route path={words.routes.admin.editpost} element={<EditPost />} />
+        <Route path={words.routes.admin.editreview} element={<EditReview />} />
 
-      <Route path={words.routes.admin.lettersmanage} element={<LettersPage />} />
-      <Route path={words.routes.admin.subscribersmanage} element={<SubscribersPage />} />
+        <Route path={words.routes.admin.lettersmanage} element={<LettersPage />} />
+        <Route path={words.routes.admin.subscribersmanage} element={<SubscribersPage />} />
 
-    </Routes>
+      </Routes>
+    </AnimatePresence>
   );
 }
 
