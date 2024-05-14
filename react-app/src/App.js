@@ -5,6 +5,7 @@ import './App.css';
 
 import Layout from './components/Layout';
 import words from './words';
+import PrivateRoute from './components/PrivateRoute';
 
 import TopPage from "./pages/EndUser/TopPage";
 import FeaturePage from './pages/EndUser/FeaturePage';
@@ -33,7 +34,6 @@ import CreateReview from './pages/Admin/CreateReview';
 import EditReview from './pages/Admin/EditReview';
 
 function App() {
-  const token = localStorage.getItem('token')
   const { pathname } = useLocation();
 
   return (
@@ -51,20 +51,36 @@ function App() {
         <Route path={words.routes.user.policy} element={Layout(PolicyPage)} />  
         <Route path={words.routes.user.purpose} element={Layout(PurposePage)} />  
         <Route path={words.routes.user.blogcontent} element={Layout(BlogContentPage)} />  
-
+        
         <Route path={words.routes.admin.login} element={<AdminLogin />} />
-        <Route path={words.routes.admin.home} element={<AdminHome />} />
-    
-        <Route path={words.routes.admin.blogmanage} element={<BlogManagePage />} />
-        <Route path={words.routes.admin.reviewmanage} element={<ReviewManagePage />} />
-        <Route path={words.routes.admin.createpost} element={<CreatePost />} />
-        <Route path={words.routes.admin.createreview} element={<CreateReview />} />
 
-        <Route path={words.routes.admin.editpost} element={<EditPost />} />
-        <Route path={words.routes.admin.editreview} element={<EditReview />} />
-
-        <Route path={words.routes.admin.lettersmanage} element={<LettersPage />} />
-        <Route path={words.routes.admin.subscribersmanage} element={<SubscribersPage />} />
+        <Route path={words.routes.admin.home} element={
+          <PrivateRoute Component={<AdminHome />} />
+        }/ >
+        <Route path={words.routes.admin.blogmanage} element={
+          <PrivateRoute Component={<BlogManagePage />} />
+        }/ >
+        <Route path={words.routes.admin.reviewmanage} element={
+          <PrivateRoute Component={<ReviewManagePage />} />
+        }/ >
+        <Route path={words.routes.admin.createpost} element={
+          <PrivateRoute Component={<CreatePost />} />
+        }/ >
+        <Route path={words.routes.admin.createreview} element={
+          <PrivateRoute Component={<CreateReview />} />
+        }/ >
+        <Route path={words.routes.admin.editpost} element={
+          <PrivateRoute Component={<EditPost />} />
+        }/ >
+        <Route path={words.routes.admin.editreview} element={
+          <PrivateRoute Component={<EditReview />} />
+        }/ >
+        <Route path={words.routes.admin.lettersmanage} element={
+          <PrivateRoute Component={<LettersPage />} />
+        }/ >
+        <Route path={words.routes.admin.subscribersmanage} element={
+          <PrivateRoute Component={<SubscribersPage />} />
+        }/ >
 
       </Routes>
     </AnimatePresence>
