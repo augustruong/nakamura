@@ -5,7 +5,6 @@ import words from '../words';
 const PrivateRoute = ({ Component }) => {
   const token = localStorage.getItem('token')
   const isAuthenticated = token ? true : false
-  console.log(Component)
 
   return (
     isAuthenticated ?
