@@ -1,6 +1,5 @@
 #header {
     position: fixed;
-    left: 0;
     top: 0;
     z-index: 1000;
     display: flex;
@@ -8,6 +7,8 @@
     flex-direction: row;
     height: var(--nav-height);
     background-color: var(--color-white);
+    max-width: var(--max-width);
+    margin: 0 auto;
 }
 #header a {
     color: var(--color-gray);
@@ -46,6 +47,7 @@
     border: 1px solid var(--color-gray);
     border-left: none;
     width: calc(11vw);
+    max-width: calc(var(--max-width)* 11 / 100);
     height: var(--nav-height);
 }
 #header > .header__menu ul li a:hover {
@@ -54,11 +56,12 @@
 }
 #header > .header__menu ul li a.logo,#header > .header__menu ul li a.last {
     width: 17vw;
+    max-width: calc(var(--max-width)* 17 / 100);
 }
 #header > .header__menu ul li a.last{
-    border-right: none;
     background-color: var(--color-yellow);
 }
+
 #header > .menu-icon {
     display: none;
 }

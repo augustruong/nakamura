@@ -5,6 +5,7 @@ footer {
     color: var(--color-white);
     position: relative;
     z-index: 10;
+    max-width: var(--max-width);
 }
 
 footer .newsletter {

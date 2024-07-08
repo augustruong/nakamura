@@ -25,7 +25,7 @@ export default function TopPage(){
     const [showReviewPopUp,setShowReviewPopUp] = useState(false)
     const [selectedReviewId, setSelectedReviewId] = useState()
 
-    const [device,setDevice] = useState("pc");
+    const [device,setDevice] = useState("");
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -33,13 +33,14 @@ export default function TopPage(){
         
         getPosts();
         getReviews();
-
+        
+        handleResize();
         window.addEventListener('resize', handleResize);
         Aos.init({duration: 2000});
     }, []);
 
     function handleResize() {
-        if (window.innerWidth <= 1080) { setDevice("mb") } else { setDevice("pc") }
+        if (window.outerWidth <= 1080) { setDevice("mb") } else { setDevice("pc") }
     }
     function getPosts() {
         axios.get(words.api.admin.post.list).then(function(response) {
@@ -117,13 +118,18 @@ export default function TopPage(){
                 </div>
                 {showReviewPopUp &&
                     <div className="review overlay">
-                        <div className="review popup" data-aos="slide-up">
-                            <a className="close" onClick={() => setShowReviewPopUp(!showReviewPopUp)}>&times;</a>
+                        <div className="review popup">
+                            <div className="close-wrapper">
+                                <a className="close" onClick={() => setShowReviewPopUp(!showReviewPopUp)}>&times;</a>
+                            </div>
                             <div className='avatar'> 
                                 <img className='w-100pc round aspect-square' src={words.api.admin.file.get(reviews.find((e) => e.id === selectedReviewId).cover)}/>
                             </div>
                             <div className="title medium text-align-ct my-base">{reviews.find((e) => e.id === selectedReviewId).name}</div>
                             <div className="message">{parse(reviews.find((e) => e.id === selectedReviewId).message ??'')}</div>
+                            <div className="cta-wrapper">
+                                <button className="primary gray" onClick={() => setShowReviewPopUp(!showReviewPopUp)}>他を見る</button>
+                            </div> 
                         </div>
                     </div>
                 }

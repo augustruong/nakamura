@@ -5,14 +5,15 @@ import './Footer.css'
 import SubscribeForm from './SubscribeForm';
 
 export default function Footer() {
-    const [device,setDevice] = useState("pc");
+    const [device,setDevice] = useState("");
 
     useEffect(() => {
+        handleResize();
         window.addEventListener('resize', handleResize);
     }, []);
 
     function handleResize() {
-        if (window.innerWidth <= 640) { setDevice("mb") } else { setDevice("pc") }
+        if (window.outerWidth <= 640) { setDevice("mb") } else { setDevice("pc") }
     }
     return(
         <footer>

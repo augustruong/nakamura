@@ -19,6 +19,8 @@
   --nav-height-mb: 60px;
   --mb-footer: calc(var(--space-xxl)*2);
   --mb-footer-mb: var(--space-xxl);
+
+  --max-width: 1920px;
 }
 
 body {
@@ -27,12 +29,19 @@ body {
   font-size: 14px;
   color: var(--color-gray);
   background-color: rgb(230, 230, 230);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  border: 1px solid var(--color-gray);
 }
 body *{z-index: 1; }
 
 body, html {
   scroll-behavior: smooth;
 
+}
+
+div {
+  max-width: var(--max-width);
 }
 
 /* width */

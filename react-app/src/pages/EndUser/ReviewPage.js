@@ -63,12 +63,17 @@ export default function ReviewPage(){
                 {showPopUp &&
                     <div className="review overlay">
                         <div className="review popup">
-                            <a className="close" onClick={() => setShowPopUp(!showPopUp)}>&times;</a>
+                            <div className="close-wrapper">
+                                <a className="close" onClick={() => setShowPopUp(!showPopUp)}>&times;</a>
+                            </div>
                             <div className='avatar'> 
                                 <img className='w-100pc round aspect-square' src={words.api.admin.file.get(reviews.find((e) => e.id === selectedId).cover)}/>
                             </div>
                             <div className="title medium text-align-ct my-base">{reviews.find((e) => e.id === selectedId).name}</div>
                             <div className="message">{parse(reviews.find((e) => e.id === selectedId).message ??'')}</div>
+                            <div className="cta-wrapper">
+                                <button className="primary gray" onClick={() => setShowPopUp(!showPopUp)}>他を見る</button>
+                            </div>    
                         </div>
                     </div>
                 }

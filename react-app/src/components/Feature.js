@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Aos from "aos";
+import "aos/dist/aos.css";
 import words from '../words';
 
 import './Feature.css'
 
 export default function Feature() {
-    const [device, setDevice] = useState("pc");
+    const [device, setDevice] = useState("");
 
     useEffect(() => {
+        handleResize();
         window.addEventListener('resize', handleResize);
+        Aos.init({duration: 2000});
     }, []);
     function handleResize() {
-        if (window.innerWidth <= 1080) { setDevice("mb") } else { setDevice("pc") }
+        if (window.outerWidth <= 1080) { setDevice("mb") } else { setDevice("pc") }
     }
     return(
         <div className='feature container four-col-grid gap-m'>
@@ -29,11 +33,11 @@ export default function Feature() {
                 </p>
             </div>
             {device === 'pc' &&
-            <div className='img-wrapper-1'>
+            <div className='img-wrapper-1' data-aos="fade-up">
                  <img className='w-100pc' src={process.env.PUBLIC_URL + `/img/feature/feature_01.png`}/>
             </div>
             }
-            <div className='img-wrapper-2'>
+            <div className='img-wrapper-2' data-aos="fade-right">
                 <img className='w-100pc' src={process.env.PUBLIC_URL + `/img/feature/feature_02.png`}/>
             </div>
             <div className='text-wrapper-2'>
@@ -66,7 +70,7 @@ export default function Feature() {
                     最初は「私がオーストラリアで味わったように、わかっているのに日本語で言い表せず、悔しい思いをしている人をなんとか助けたい」という思いからの進学でした。でもその中で普段「国語」として当たり前に使っていたことばを、一旦「英語」「韓国語」「フランス語」と同じように「日本語」として客観的に研究する、という時間を過ごしました。その結果、日本語のどこが学習しにくいのか。何が難しいのか。それは何故かを自分も学ぶことができたのです。だから「こう書いた方が相手にわかりやすい文章になるのはなぜ？」と質問されても、困りません。理論的に説明できるのです。
                 </p>
             </div>
-            <div className='img-wrapper-3'>
+            <div className='img-wrapper-3' data-aos="fade-left">
                 <img className='w-100pc' src={process.env.PUBLIC_URL + `/img/feature/feature_03.png`}/>
             </div>
             <div className='text-wrapper-4'>
@@ -80,7 +84,7 @@ export default function Feature() {
                     これは一人の同期生の留学生のおかげです。ある日彼女は「話せるし、聞けるし、読める。だけど日本語ってどうしてこんなに書くだけが難しいの」と涙ながらに訴えてきました。彼女のために「あなたはここで何を言いたかったの？」「じゃあ、こう書いたらどう？」と、相手を否定せず、思いや考えを聞きだし、もっと伝わる日本語表現を提案する。これを繰り返していくことで、相手も自信がつき、
                 </p>
             </div>
-            <div className='img-wrapper-4'>
+            <div className='img-wrapper-4' data-aos="fade-up">
                 <img className='w-100pc' src={process.env.PUBLIC_URL + `/img/feature/feature_04.png`}/>
             </div>
             <div className='text-wrapper-7'>
@@ -100,15 +104,15 @@ export default function Feature() {
                 </p>
                 }
             </div>
-            <div className='img-wrapper-5'>
+            <div className='img-wrapper-5' data-aos="fade-up">
                 <img className='w-100pc' src={process.env.PUBLIC_URL + `/img/feature/feature_05.png`}/>
             </div>
             <div className='text-wrapper-8'>
                 <div className='koushite'>こうして、私は</div>
                 <div className='list'>
-                    <div className='list-item'>・官公庁のトップ（市長、大臣）のために800本書いた実績</div>
-                    <div className='list-item'>・思いや考えがことばにできない悔しさがわかる</div>
-                    <div className='list-item'>・国語のより伝わる書き方を、理論的に説明できる</div>
+                    <div className='list-item' data-aos="slide-up">・官公庁のトップ（市長、大臣）のために800本書いた実績</div>
+                    <div className='list-item' data-aos="slide-up" data-aos-delay="200">・思いや考えがことばにできない悔しさがわかる</div>
+                    <div className='list-item' data-aos="slide-up" data-aos-delay="400">・国語のより伝わる書き方を、理論的に説明できる</div>
                 </div>
                 <p>この3つの強みで、あなたのために書くことも、教えることも、一緒に考えながら書くこともするサービスを提供しています。</p>
             </div>
@@ -123,7 +127,7 @@ export default function Feature() {
                     <p>には夢があります。世界の人がことばでわかりあい、争いの無い世の中を実現すること。神様は人間にだけ「ことば」という贈り物をくださったのです。だったらそれを使って、力によってではない、皆が幸せな世界を作りたいのです。</p>
                 </div>
             </div>
-            <div className='text-wrapper-10'>
+            <div className='text-wrapper-10' data-aos="slide-up">
                 <p>満たされた人が増えれば、争いは減っていきます。私のことばの力で、あなたのビジネスの拡大や、夢の実現のお手伝いをさせてください。そして...</p>
                 <div className='title'>ご一緒に争いの無い世界を実現しませんか？</div>
                 <Link to={words.routes.user.contact}>

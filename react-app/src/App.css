@@ -525,14 +525,15 @@ button.disabled:hover {
 
 .review.overlay, .feature.overlay, .overlay {
   position: fixed;
-  top: 0;
-  bottom: 0;
   left: 0;
-  right: 0;
+  top: 0;
   background: rgba(0, 0, 0, 0.7);
   transition: opacity 500ms;
   z-index: 1001;
   align-content: center;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw !important;
 }
 .review.popup {
   margin: 0 auto;
@@ -543,17 +544,22 @@ button.disabled:hover {
   height: 90%;
   position: relative;
   transition: all 5s ease-in-out;
-  overflow: auto;
+  overflow-x: hidden;
+  max-width: 400px;
+  max-height: 800px;
+}
+.review.popup .close-wrapper {
+  width: 100%;
+  text-align: right;
 }
 .review.popup .close {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  transform: translate(60px, -40px);
   transition: all 200ms;
   font-weight: 700;
   font-size: 36px;
   text-decoration: none;
-  color: #333;
+  color: var(--color-white);
   cursor: pointer;
 }
 
@@ -565,16 +571,23 @@ button.disabled:hover {
   border: 1px solid var(--color-gray);
   padding: var(--space-base);
 }
-
+.review.popup .cta-wrapper {
+  text-align: center;
+  margin-top: var(--space-l);
+}
 .feature.popup {
   margin: 0 auto;
   border-radius: 10px;
-  width: 1050px;
+  max-width: 1050px;
   height: 90%;
   position: relative;
   transition: all 5s ease-in-out;
   overflow: auto;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 400px;
+  max-height: 800px;
+  margin-top: var(--space-m);
 }
 
 .price .popup {
@@ -601,9 +614,14 @@ button.disabled:hover {
 }
 @media screen and (max-width: 1080px) {
   .review .popup {
-    top: 55%;
+    /* top: 55%; */
     width: 90%;
     height: 85%;
+    padding: var(--space-l) var(--space-base);
+  }
+  .review.popup .close { 
+    transform: translate(-20px, -20px);
+    color: var(--color-gray);
   }
   .price .popup {
     top: 53%;
