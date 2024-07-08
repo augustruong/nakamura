@@ -155,4 +155,7 @@
     .category-wrapper .category {
         margin-right: 0;
     }
+    #top-page section.service .switcher div{
+        width: calc(50vw - 1.5px - var(--space-xs));
+    }
 }
