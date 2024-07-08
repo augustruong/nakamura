@@ -96,7 +96,7 @@
     text-align: center;
     padding: var(--space-s);
     float: left;
-    width: calc(50vw - 2.5px - var(--space-xs));
+    width: calc(50vw - 3.5px - var(--space-xs));
     letter-spacing: .5em;
     background-color: var(--color-white);
     cursor: pointer;
