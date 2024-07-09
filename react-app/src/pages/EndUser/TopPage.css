@@ -113,12 +113,11 @@
     width: 1194px;
     margin: 0 auto;
     height: 100vh;
-    align-content: center;
     text-align: center;
     margin-top: 80px;
 }
 #top-page section.feature .img-wrapper button {
-    margin-top: 30%;
+    margin-top: 43%;
 }
 
 
@@ -157,5 +156,12 @@
     }
     #top-page section.service .switcher div{
         width: calc(50vw - 1.5px - var(--space-xs));
+    }
+    #top-page section.hero .mid .kv-wrapper button {
+        bottom: 25px;
+        left: var(--space-s);
+    }
+    #top-page section.feature .img-wrapper button {
+        margin-top: 85%;
     }
 }

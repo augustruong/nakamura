@@ -65,7 +65,10 @@
     background: url('/public/img/topPage/TP_Review_bottom.png');
     height: 250px;
     text-align: center;
-    align-content: center;
+}
+.tp_review .body .bottom button {
+    top: 50%;
+    transform: translateY(-50%);
 }
 .review-card-wrapper {
     background: var(--color-white);
@@ -87,11 +90,10 @@ section.yourstory {
 section.yourstory .wrapper {
     height: 100%;
     text-align: center;
-    align-content: center;
     background: #1d1a19a4;
 }
 section.yourstory .wrapper button {
-    margin-top: 80px;
+    top: 55%;
 }
 
 .cursor {
@@ -183,6 +185,7 @@ section.yourstory .wrapper button {
     }
     .section-header {
         padding: var(--space-s);
+        align-items: baseline;
     }
     .review-card-wrapper {
         flex-direction: column;
@@ -201,12 +204,10 @@ section.yourstory .wrapper button {
         width: 100%;
         background-position-x: center;
         background-size: 210%;
-        height: 70vh;
+        height: 55vh;
         margin-top: 0;
     }
-    #top-page section.feature .img-wrapper button {
-        margin-top: 35%;
-    }
+
     .tp_blog {
         margin-bottom: var(--mb-footer-mb);
     }

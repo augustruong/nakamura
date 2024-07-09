@@ -45,3 +45,21 @@
     padding: var(--space-base);
     margin-bottom: var(--space-xxl);
 }
+
+@media screen and (max-width: 768px) {
+    #profile-page {
+        flex-direction: column;
+        height: auto;
+    }
+    #profile-page .left {
+        width: 100%;
+        height: auto;
+    }
+    #profile-page .right {
+        width: 100%;
+        padding: var(--space-base);
+        overflow: hidden;
+        height: auto;
+
+    }
+}

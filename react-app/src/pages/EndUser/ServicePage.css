@@ -66,9 +66,7 @@
     #service-page #ghostwriter .grid {
         flex-direction: column-reverse;
     }
+    /* #service-page .p-wrapper {
+        padding: var(--space-base);
+    } */
 }
-/* @media screen and (max-width: 640px) {
-    #service-page section.intro .gallery .item a .title {
-        width: 75px;
-    }
-} */
