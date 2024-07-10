@@ -55,7 +55,7 @@ export default function BlogContentPage(){
                         <p>{curPost.description}</p>
                     </div>
                 </div>
-                <div className="content px-l">
+                <div className="content">
                     <div className="relative aspect-video mx-auto">
                         {/* {<img className="inset-img object-cover" data-nimg="fill" sizes="100vw" decoding="async" loading="eager" src={process.env.PUBLIC_URL + `/img/blog-sample-img.png`}/>} */}
                         {<img className="inset-img object-cover" data-nimg="fill" sizes="100vw" decoding="async" loading="eager" src={words.api.admin.file.get(curPost.cover) ??''}/>}
@@ -65,11 +65,11 @@ export default function BlogContentPage(){
                         
                     </div>
                 </div>
-                <div className="max-w-768 mx-auto mb-base">
-                            <a href='/blog' >
-                                <a className="back color-gray">ブログ一覧へ戻る</a>
-                            </a>
-                        </div>
+                <div className="back-btn max-w-768 mx-auto mb-base">
+                    <a href='/blog' >
+                        <a className="back color-gray">ブログ一覧へ戻る</a>
+                    </a>
+                </div>
                 <div id="previous_next_post" className="max-w-768 mx-auto flex-row-ct">
                     {prevPost.id !== undefined &&
                     <div className="prev_post">
