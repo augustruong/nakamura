@@ -26,16 +26,16 @@ $white: var(--color-white);
         border-radius: 0;
 
         &:hover, &:focus {
-        cursor: pointer;
-        color: $gray;
-        &::after {
             cursor: pointer;
             color: $gray;
-  
-        }
+            &::after {
+                cursor: pointer;
+                color: $gray;
+    
+            }
         }
         .accordion-title {
-        padding: 1em 1.5em 1em 0;
+            padding: 1em 1.5em 1em 0;
         }
         .icon {
         display: inline-block;
@@ -85,6 +85,9 @@ $white: var(--color-white);
         will-change: opacity, max-height;
         }
     }
+    button:hover {
+        transform: scale(1.1);
+    }
     .accordion-content {
         opacity: 0;
         max-height: 0;
@@ -93,9 +96,9 @@ $white: var(--color-white);
         will-change: opacity, max-height;
 
         p {
-        font-size: 14px;
-        margin-bottom: 2em;
-        padding: 0 1em;
+            font-size: 14px;
+            margin-bottom: 2em;
+            padding: 0 1em;
         }
     }
     .answer {
@@ -105,5 +108,13 @@ $white: var(--color-white);
         border-radius: 25px;
         margin-right: var(--space-base);
         margin-left: 1em;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .accordion-item {
+        button:hover {
+            transform: none;
+        }
     }
 }

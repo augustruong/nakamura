@@ -173,7 +173,9 @@ export default function TopPage(){
                         <div className="feature popup" data-aos="slide-up">
                             <Feature/>
                         </div>
-                        <a className="close" onClick={() => setShowFeature(false)}>&times;</a>
+                        <div className="close-wrapper">
+                            <a className="close" onClick={() => setShowFeature(false)}>&times;</a>
+                        </div>
                     </div>
                 }
                 <div className='tp_blog top-divider-gray container'>

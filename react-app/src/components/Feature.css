@@ -150,6 +150,7 @@
         flex-direction: column;
         gap: var(--space-base);
         padding: var(--space-base);
+        top: 50px;
     }
 
     .feature .text-wrapper-10 {

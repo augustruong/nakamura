@@ -1,12 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import words from "../../words";
 import { motion } from "framer-motion";
 
 export default function PolicyPage(){
+    const [device,setDevice] = useState("");
     useEffect(() => {
         window.scrollTo(0, 0);
         document.title = words.terms.privacypolicy.title;
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
     }, [])
+
+    function handleResize() {
+        if (window.outerWidth <= 768) { setDevice("mb") } else { setDevice("pc") }
+    }
+
     return(
         <motion.main
             className="main__container"
@@ -15,7 +24,7 @@ export default function PolicyPage(){
             exit={{ opacity: 0 }}
             transition={{ duration: 1}}
         >
-            <div id="policy-page" className="mt-nav mb-100 px-28vw">
+            <div id="policy-page" className={device === "pc" ? "mt-nav mb-100 px-28vw" : "mt-nav mb-100 px-base"}>
                 <div className="header text-align-ct">
                     <div className="title large py-m">{words.terms.privacypolicy.title}</div>
                 </div>

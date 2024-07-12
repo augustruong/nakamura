@@ -70,6 +70,7 @@
     top: 50%;
     transform: translateY(-50%);
 }
+
 .review-card-wrapper {
     background: var(--color-white);
     padding: var(--space-m);
@@ -79,7 +80,13 @@
     flex-direction: row;
     align-items: center;
     height: 100%;
+    margin-right: -1px;
+    border-bottom: none;
 }
+
+#review-page .container .two-col-grid a:last-child .review-card-wrapper, #review-page .container .two-col-grid a:nth-last-child(2) .review-card-wrapper {
+    border-bottom: 1px solid var(--color-gray);
+} 
 
 section.yourstory {
     background: url('/public/img/topPage/yourstory.png') no-repeat;
